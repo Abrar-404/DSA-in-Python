@@ -39,6 +39,9 @@ class SinglyLinkedList:
         prev = t1
         t1 = t1.next
 
+    if(t1.info == value):
+      prev.next = None
+
   def insertAtEnd(self, value):
     temp = Node(value)
     if(self.head != None):
@@ -66,5 +69,5 @@ obj.insertAtEnd(20)
 obj.insertAtEnd(30)
 obj.insertAtBeg(5)
 obj.insertAtMid(40, 20)
-obj.deleteLL(5)
+obj.deleteLL(30)
 obj.PrintLL()
