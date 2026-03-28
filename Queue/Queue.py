@@ -3,4 +3,4 @@ class Queue:
     self.items = []
     
   def isEmpty(self):
-    return len(self.items == 0)
+    return len(self.items) == 0
