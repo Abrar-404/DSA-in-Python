@@ -7,3 +7,9 @@ class Queue:
   
   def insert(self, value):
     self.items.append(value)
+    
+  def delete(self):
+    if (self.isEmpty()):
+      raise Exception("Queue is empty")
+    else:
+      return self.items.pop(0)
