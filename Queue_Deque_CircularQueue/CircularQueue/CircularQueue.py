@@ -5,9 +5,36 @@ class CircularQueue:
     self.front = self.rear = -1
     
   def enqueue(self, value):  # Insert Method
-    if((self.rear + 1) % self.front):
+    if((self.rear + 1) % self.size == self.front):
       print("Queue is Full")
     elif(self.front == -1):
       self.front = self.rear = 0
       self.items[self.rear] = value
+    else:
+      self.rear = (self.rear + 1) % self.size
+      self.items[self.rear] = value
+      
+  def dequeue(self):  # Delete Method
+    if(self.front == -1):
+      print("Queue is Empty")
+    elif(self.front == self.rear):
+      print(self.items[self.front], "Deleted")
+      self.front = self.rear = -1
+    else:
+      print(self.items[self.front], "Deleted")
+      self.front = (self.front + 1) % self.size
     
+    
+cq = CircularQueue(5)
+
+cq.enqueue(10)
+cq.enqueue(20)
+cq.enqueue(30)
+cq.enqueue(40)
+cq.enqueue(50)
+
+cq.dequeue()
+
+cq.enqueue(5)
+
+print(cq.items)
