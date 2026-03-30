@@ -8,5 +8,5 @@ def Recursion(n):
     return result
   
   
-PrintingValue = Recursion(n)
-print(f"The factorial of {n} is {PrintingValue}")
+Value = Recursion(n)
+print(f"The factorial of {n} is {Value}")
